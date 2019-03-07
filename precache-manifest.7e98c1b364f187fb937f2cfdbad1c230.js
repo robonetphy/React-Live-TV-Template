@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "9f108eda67a31d924f9e",
+    "revision": "cc2ea7da1dd62952677d",
     "url": "/React-Live-TV-Template/static/css/main.b33a8d7a.chunk.css"
   },
   {
-    "revision": "9f108eda67a31d924f9e",
-    "url": "/React-Live-TV-Template/static/js/main.9f108eda.chunk.js"
+    "revision": "cc2ea7da1dd62952677d",
+    "url": "/React-Live-TV-Template/static/js/main.cc2ea7da.chunk.js"
   },
   {
     "revision": "363d9f54498e53cc892e",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/React-Live-TV-Template/static/js/2.65987e4b.chunk.js"
   },
   {
-    "revision": "71237b6b529beea8c41d7e7397752d8f",
+    "revision": "657793ffd27ee54a2e3491e486dad111",
     "url": "/React-Live-TV-Template/index.html"
   }
 ];

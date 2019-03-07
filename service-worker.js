@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/React-Live-TV-Template/precache-manifest.ca853634f60292fe979c8f46fce9a6fc.js"
+  "/React-Live-TV-Template/precache-manifest.7e98c1b364f187fb937f2cfdbad1c230.js"
 );
 
 workbox.clientsClaim();
