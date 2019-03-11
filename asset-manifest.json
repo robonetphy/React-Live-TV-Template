@@ -1,13 +1,16 @@
 {
-  "main.css": "/React-Live-TV-Template/static/css/main.b33a8d7a.chunk.css",
-  "main.js": "/React-Live-TV-Template/static/js/main.cc2ea7da.chunk.js",
-  "main.js.map": "/React-Live-TV-Template/static/js/main.cc2ea7da.chunk.js.map",
-  "runtime~main.js": "/React-Live-TV-Template/static/js/runtime~main.363d9f54.js",
-  "runtime~main.js.map": "/React-Live-TV-Template/static/js/runtime~main.363d9f54.js.map",
-  "static/js/2.65987e4b.chunk.js": "/React-Live-TV-Template/static/js/2.65987e4b.chunk.js",
-  "static/js/2.65987e4b.chunk.js.map": "/React-Live-TV-Template/static/js/2.65987e4b.chunk.js.map",
-  "index.html": "/React-Live-TV-Template/index.html",
-  "precache-manifest.7e98c1b364f187fb937f2cfdbad1c230.js": "/React-Live-TV-Template/precache-manifest.7e98c1b364f187fb937f2cfdbad1c230.js",
-  "service-worker.js": "/React-Live-TV-Template/service-worker.js",
-  "static/css/main.b33a8d7a.chunk.css.map": "/React-Live-TV-Template/static/css/main.b33a8d7a.chunk.css.map"
+  "main.css": "/Live-TV/static/css/main.8e1e4073.chunk.css",
+  "main.js": "/Live-TV/static/js/main.4415cbb2.chunk.js",
+  "main.js.map": "/Live-TV/static/js/main.4415cbb2.chunk.js.map",
+  "runtime~main.js": "/Live-TV/static/js/runtime~main.928a06a2.js",
+  "runtime~main.js.map": "/Live-TV/static/js/runtime~main.928a06a2.js.map",
+  "static/css/2.de2933cb.chunk.css": "/Live-TV/static/css/2.de2933cb.chunk.css",
+  "static/js/2.9da0dff8.chunk.js": "/Live-TV/static/js/2.9da0dff8.chunk.js",
+  "static/js/2.9da0dff8.chunk.js.map": "/Live-TV/static/js/2.9da0dff8.chunk.js.map",
+  "index.html": "/Live-TV/index.html",
+  "precache-manifest.0a5d57beaa7a08f294c9ee5e8cae183b.js": "/Live-TV/precache-manifest.0a5d57beaa7a08f294c9ee5e8cae183b.js",
+  "service-worker.js": "/Live-TV/service-worker.js",
+  "static/css/2.de2933cb.chunk.css.map": "/Live-TV/static/css/2.de2933cb.chunk.css.map",
+  "static/css/main.8e1e4073.chunk.css.map": "/Live-TV/static/css/main.8e1e4073.chunk.css.map",
+  "static/media/Landing.css": "/Live-TV/static/media/background.9a34e650.jpg"
 }
