@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Live-TV/precache-manifest.0a5d57beaa7a08f294c9ee5e8cae183b.js"
+  "/React-Live-TV-Template/precache-manifest.a57c21c95083e5dbec9d75c2a6437d3a.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/Live-TV/index.html", {
+workbox.routing.registerNavigationRoute("/React-Live-TV-Template/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
