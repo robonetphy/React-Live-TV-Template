@@ -2,11 +2,6 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Hls from "hls.js";
 
-const PlayerWrapper = styled.div`
-  position: relative;
-  padding-top: 2%;
-`;
-const PlayerInner = styled.div``;
 const VideoTitle = styled.h2`
   font-size: 22px;
   color: rgba(0, 0, 0, 0.7);
@@ -22,6 +17,10 @@ const VideoLiveButtonTitle = styled.span`
   margin-right: 5px;
   font-weight: 400;
   border-radius: 5px;
+`;
+const VideoDescription = styled.div`
+  width: 80%;
+  font-size: 0.8em;
 `;
 export default class Player extends Component {
   constructor(props) {
@@ -53,26 +52,33 @@ export default class Player extends Component {
   }
   render() {
     const style = {
-      width: 640,
-      height: 360,
+      width: 1000,
+      height: 500,
       background: "#000"
     };
+
     return (
-      <PlayerWrapper>
-        <PlayerInner>
+      <div className="mt-lg-5">
+        <div className="embed-responsive embed-responsive-21by9">
           <video
+            className="embed-responsive-item"
             controls={false}
             onClick={this._onTouchInsidePlayer}
             style={style}
             ref={player => (this.player = player)}
             autoPlay={true}
           />
-        </PlayerInner>
-        <VideoTitle>
-          <VideoLiveButtonTitle>Live</VideoLiveButtonTitle>
-          {this.props.Name}
-        </VideoTitle>
-      </PlayerWrapper>
+        </div>
+        <div className="container mt-lg-5">
+          <VideoTitle>
+            <VideoLiveButtonTitle>Live</VideoLiveButtonTitle>
+            {this.props.Name}
+            <VideoDescription className="mt-lg-2">
+              {this.props.Description}
+            </VideoDescription>
+          </VideoTitle>
+        </div>
+      </div>
     );
   }
 }

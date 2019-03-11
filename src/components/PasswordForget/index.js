@@ -47,39 +47,35 @@ class PasswordForgetFormBase extends Component {
     const isInvalid = email === "";
 
     return (
-      <div className="App FullHeightPasswordForget">
-        <div className="App__Aside" />
-        <div className="App__Form">
-          <div className="FormTitle FormTitle__Link--Active FormTitle__Link">
-            Password Forget
+      <div className="container  mt-lg-5">
+        <div className="FormTitle FormTitle__Link--Active FormTitle__Link  mb-lg-5">
+          Password Forget
+        </div>
+        <form onSubmit={this.onSubmit}>
+          <div class="form-group">
+            <label for="SignupEmail">Email address</label>
+            <input
+              type="email"
+              class="form-control mb-lg-2"
+              id="SinupEmail"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              autoComplete="off"
+              name="email"
+              value={this.state.email}
+              onChange={this.onChange}
+            />
+            <small id="emailHelp" class="form-text text-muted">
+              We'll never share your email with anyone else.
+            </small>
           </div>
-          <div className="FormCenter psForm">
-            <form onSubmit={this.onSubmit} className="FormFields">
-              <div className="FormField">
-                <label className="FormField__Label" htmlFor="email">
-                  E-Mail Address
-                </label>
-                <input
-                  type="email"
-                  className="FormField__Input"
-                  placeholder="Enter your email"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                />
-              </div>
-              <div className="FormField">
-                <button
-                  className="FormField__Button mr-20"
-                  disabled={isInvalid}
-                  type="submit"
-                >
-                  Sign In
-                </button>
-              </div>
-              {error && <p>{error.message}</p>}
-            </form>
-          </div>
+
+          <button type="submit" class="btn btn-primary" disabled={isInvalid}>
+            Get Link On Mail
+          </button>
+        </form>
+        <div className="container mt-lg-2">
+          {error && <p>{error.message}</p>}
         </div>
       </div>
     );

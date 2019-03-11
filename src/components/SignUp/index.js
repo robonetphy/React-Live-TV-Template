@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter, NavLink } from "react-router-dom";
 import { withFirebase } from "../Firebase";
 import { compose } from "recompose";
-
+import "../../form.css";
 import * as ROUTES from "../../constants/routes";
 
 const SignUpPage = () => (
@@ -60,117 +60,119 @@ class SignUpFormBase extends Component {
       email === "" ||
       username === "";
     return (
-      <div className="App">
-        <div className="App__Aside" />
-        <div className="App__Form">
-          <div className="FormTitle">
-            <NavLink
-              to={ROUTES.SIGN_IN}
-              activeClassName="FormTitle__Link--Active"
-              className="FormTitle__Link"
-            >
-              Sign In
-            </NavLink>
-            or
-            <NavLink
-              exact
-              to={ROUTES.SIGN_UP}
-              activeClassName="FormTitle__Link--Active"
-              className="FormTitle__Link"
-            >
-              Sign Up
-            </NavLink>
+      <div className="container mt-lg-5">
+        <div className="FormTitle">
+          <NavLink
+            to={ROUTES.SIGN_IN}
+            activeClassName="FormTitle__Link--Active"
+            className="FormTitle__Link"
+            style={{ textDecoration: "none" }}
+          >
+            Sign In
+          </NavLink>
+          or
+          <NavLink
+            exact
+            to={ROUTES.SIGN_UP}
+            activeClassName="FormTitle__Link--Active"
+            className="FormTitle__Link"
+            style={{ textDecoration: "none" }}
+          >
+            Sign Up
+          </NavLink>
+        </div>
+        <form onSubmit={this.onSubmit}>
+          <div class="form-group">
+            <label for="SignupName">Name</label>
+            <input
+              type="text"
+              class="form-control mb-lg-2"
+              id="SinupName"
+              aria-describedby="NameHelp"
+              placeholder="Enter Name"
+              autoComplete="off"
+              name="username"
+              value={username}
+              onChange={this.onChange}
+            />
+            <small id="NameHelp" class="form-text text-muted">
+              Remember This Might HelpFull
+            </small>
           </div>
-          <div className="FormCenter">
-            <form onSubmit={this.onSubmit} className="FormFields">
-              <div className="FormField">
-                <label className="FormField__Label" htmlFor="name">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  className="FormField__Input"
-                  placeholder="Enter your full name"
-                  autoComplete="off"
-                  name="username"
-                  value={username}
-                  onChange={this.onChange}
-                />
-              </div>
-              <div className="FormField">
-                <label className="FormField__Label" htmlFor="password">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  className="FormField__Input"
-                  placeholder="Enter your password"
-                  autoComplete="off"
-                  name="passwordOne"
-                  value={passwordOne}
-                  onChange={this.onChange}
-                />
-              </div>
-              <div className="FormField">
-                <label className="FormField__Label" htmlFor="password">
-                  Confirm Password
-                </label>
-                <input
-                  type="password"
-                  className="FormField__Input"
-                  placeholder="Enter Confirm Password"
-                  autoComplete="off"
-                  name="passwordTwo"
-                  value={passwordTwo}
-                  onChange={this.onChange}
-                />
-              </div>
-              <div className="FormField">
-                <label className="FormField__Label" htmlFor="email">
-                  E-Mail Address
-                </label>
-                <input
-                  type="email"
-                  className="FormField__Input"
-                  placeholder="Enter your email"
-                  autoComplete="off"
-                  name="email"
-                  value={email}
-                  onChange={this.onChange}
-                />
-              </div>
-
-              <div className="FormField">
-                <label className="FormField__CheckboxLabel">
-                  <input
-                    className="FormField__Checkbox"
-                    type="checkbox"
-                    name="hasAgreed"
-                  />
-                  I agree all statements in
-                  <a
-                    href="https://en.wikipedia.org/wiki/T%26C"
-                    className="FormField__TermsLink"
-                  >
-                    terms of service
-                  </a>
-                </label>
-              </div>
-              <div className="FormField">
-                <button
-                  className="FormField__Button mr-20"
-                  disabled={isInvalid}
-                  type="submit"
-                >
-                  Sign Up
-                </button>
-                <Link to={ROUTES.SIGN_IN} className="FormField__Link">
-                  I'm already member
-                </Link>
-              </div>
-              {error && <p>{error.message}</p>}
-            </form>
+          <div class="form-group">
+            <label for="SignupPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control mb-lg-2"
+              id="SignupPassword1"
+              placeholder="Password"
+              autoComplete="off"
+              name="passwordOne"
+              value={passwordOne}
+              onChange={this.onChange}
+            />
           </div>
+          <div class="form-group">
+            <label for="SignupPassword2">Confirm Password</label>
+            <input
+              type="password"
+              class="form-control mb-lg-2"
+              id="SignupPassword2"
+              placeholder="Password"
+              autoComplete="off"
+              name="passwordTwo"
+              value={passwordTwo}
+              onChange={this.onChange}
+            />
+          </div>
+          <div class="form-group">
+            <label for="SignupEmail">Email address</label>
+            <input
+              type="email"
+              class="form-control mb-lg-2"
+              id="SinupEmail"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              autoComplete="off"
+              name="email"
+              value={email}
+              onChange={this.onChange}
+            />
+            <small id="emailHelp" class="form-text text-muted">
+              We'll never share your email with anyone else.
+            </small>
+          </div>
+          <div class="form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1">
+              I agree all statements in
+              <a
+                href="/"
+                className="FormField__TermsLink"
+                style={{ textDecoration: "none" }}
+              >
+                {" "}
+                terms of service
+              </a>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary" disabled={isInvalid}>
+            Sign Up
+          </button>
+          <Link
+            to={ROUTES.SIGN_IN}
+            className="FormField__Link"
+            style={{ textDecoration: "none" }}
+          >
+            I'm already member
+          </Link>
+        </form>
+        <div className="container mt-lg-2">
+          {error && <p>{error.message}</p>}
         </div>
       </div>
     );

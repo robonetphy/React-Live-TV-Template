@@ -1,150 +1,42 @@
-@import "https://fonts.googleapis.com/css?family=Open+Sans:400,800";
-* {
-  box-sizing: border-box;
-  margin: 0%;
-  padding: 0%;
-}
-html,
-body {
-  padding: 0%;
-  margin: 0%;
-}
-body {
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.7);
-  font-family: "Open Sans", sans-serif;
-  overflow: "auto";
-}
-.App {
-  display: flex;
-  color: white;
-  overflow: "auto";
-}
-.FullHeightPasswordForget {
-  height: 94vh;
-}
-.FullHeightSignin {
-  height: 94vh;
-}
-.App__Aside {
-  width: 50%;
-  background-color: #66dac7;
-}
-.App_Aside_Content {
-  margin: auto;
-  width: 50%;
-  padding: 100px;
-  color: #2e4158;
-  font-size: 1.5em;
-  font-weight: 600;
-  position: relative;
-  top: 20%;
-  left: -8%;
-}
-.App__Form {
-  width: 50%;
-  background-color: #2e4158;
-  padding: 25px 40px;
-  overflow: auto;
-}
-
-.FormCenter {
-  margin-bottom: 100px;
-}
-
 .FormTitle {
   color: #707c8b;
   font-weight: 300;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .FormTitle__Link {
-  color: #707c8b;
   text-decoration: none;
   display: inline-block;
   font-size: 1.7em;
   margin: 0 10px;
+  color: #707c8b;
   padding-bottom: 5px;
 }
 
-.FormTitle__Link:first-child {
-  margin-left: 0;
-}
-
 .FormTitle__Link--Active {
-  color: white;
+  color: #707c8b;
   border-bottom: 1px solid #199087;
+  text-decoration: none;
 }
 
-.FormField {
-  margin-bottom: 40px;
-}
-
-.FormField__Label {
-  display: block;
-  text-transform: uppercase;
-  font-size: 0.9em;
-  color: white;
-  margin-top: 20px;
-}
-.FormField__Input {
-  width: 85%;
-  background-color: transparent;
-  border: none;
-  color: white;
-  outline: none;
-  border-bottom: 1px solid #445366;
-  font-size: 1em;
-  font-weight: 300;
-  padding-bottom: 10px;
-  margin-top: 10px;
-}
-
-.FormField__Input::placeholder {
-  color: #616e7f;
-}
-
-.FormField__Button {
-  background-color: #52c4b9;
-  color: white;
-  border: none;
-  outline: none;
-  border-radius: 25px;
-  padding: 15px 70px;
-  font-size: 0.8em;
-  font-weight: 500;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.FormField__Button:hover {
-  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.59);
-}
 .FormField__Link {
   color: #66707d;
   text-decoration: none;
   display: inline-block;
   border-bottom: 1.5px solid #225e62;
   padding-bottom: 5px;
-  margin: 10px;
+  margin: 40px;
 }
-
-.FormField__CheckboxLabel {
-  color: #646f7d;
-  font-size: 0.9em;
-}
-
 .FormField__Checkbox {
   position: relative;
   top: 1.5px;
 }
 
 .FormField__TermsLink {
-  color: white;
+  color: #707c8b;
   border-bottom: 1px solid #199087;
   text-decoration: none;
   display: inline-block;
   padding-bottom: 2px;
   margin-left: 5px;
-}
-.active_navbar {
-  background: #66dac7;
 }

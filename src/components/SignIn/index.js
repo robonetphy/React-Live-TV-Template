@@ -32,7 +32,7 @@ class SignInFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.LIVE);
       })
       .catch(error => {
         this.setState({ error });
@@ -51,77 +51,80 @@ class SignInFormBase extends Component {
     const isInvalid = password === "" || email === "";
 
     return (
-      <div className="App FullHeightSignin">
-        <div className="App__Aside" />
-        <div className="App__Form">
-          <div className="FormTitle">
-            <NavLink
-              to={ROUTES.SIGN_IN}
-              activeClassName="FormTitle__Link--Active"
-              className="FormTitle__Link"
-            >
-              Sign In
-            </NavLink>
-            or
-            <NavLink
-              exact
-              to={ROUTES.SIGN_UP}
-              activeClassName="FormTitle__Link--Active"
-              className="FormTitle__Link"
-            >
-              Sign Up
-            </NavLink>
+      <div className="container mt-lg-5">
+        {" "}
+        <div className="FormTitle">
+          <NavLink
+            to={ROUTES.SIGN_IN}
+            activeClassName="FormTitle__Link--Active"
+            className="FormTitle__Link"
+            style={{ textDecoration: "none" }}
+          >
+            Sign In
+          </NavLink>
+          or
+          <NavLink
+            exact
+            to={ROUTES.SIGN_UP}
+            activeClassName="FormTitle__Link--Active"
+            className="FormTitle__Link"
+            style={{ textDecoration: "none" }}
+          >
+            Sign Up
+          </NavLink>
+        </div>
+        <form onSubmit={this.onSubmit}>
+          <div class="form-group">
+            <label for="SignupEmail">Email address</label>
+            <input
+              type="email"
+              class="form-control mb-lg-2"
+              id="SinupEmail"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              autoComplete="off"
+              name="email"
+              value={email}
+              onChange={this.onChange}
+            />
+            <small id="emailHelp" class="form-text text-muted">
+              We'll never share your email with anyone else.
+            </small>
           </div>
-          <div className="FormCenter">
-            <form onSubmit={this.onSubmit} className="FormFields">
-              <div className="FormField">
-                <label className="FormField__Label" htmlFor="email">
-                  E-Mail Address
-                </label>
-                <input
-                  type="email"
-                  className="FormField__Input"
-                  placeholder="Enter your email"
-                  autoComplete="off"
-                  name="email"
-                  value={email}
-                  onChange={this.onChange}
-                />
-              </div>
-
-              <div className="FormField">
-                <label className="FormField__Label" htmlFor="password">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  className="FormField__Input"
-                  placeholder="Enter your password"
-                  name="password"
-                  autoComplete="off"
-                  value={password}
-                  onChange={this.onChange}
-                />
-              </div>
-
-              <div className="FormField">
-                <button
-                  className="FormField__Button mr-20"
-                  disabled={isInvalid}
-                  type="submit"
-                >
-                  Sign In
-                </button>
-                <Link to={ROUTES.SIGN_UP} className="FormField__Link">
-                  Create an account
-                </Link>
-                <Link to={ROUTES.PASSWORD_FORGET} className="FormField__Link">
-                  Forgot Password ?
-                </Link>
-              </div>
-              {error && <p>{error.message}</p>}
-            </form>
+          <div class="form-group">
+            <label for="SignupPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control mb-lg-2"
+              id="SignupPassword1"
+              placeholder="Password"
+              name="password"
+              autoComplete="off"
+              value={password}
+              onChange={this.onChange}
+            />
           </div>
+
+          <button type="submit" class="btn btn-primary" disabled={isInvalid}>
+            Sign In
+          </button>
+          <Link
+            to={ROUTES.SIGN_UP}
+            className="FormField__Link"
+            style={{ textDecoration: "none" }}
+          >
+            Create an account
+          </Link>
+          <Link
+            to={ROUTES.PASSWORD_FORGET}
+            className="FormField__Link"
+            style={{ textDecoration: "none" }}
+          >
+            Forgot Password ?
+          </Link>
+        </form>
+        <div className="container mt-lg-2">
+          {error && <p>{error.message}</p>}
         </div>
       </div>
     );

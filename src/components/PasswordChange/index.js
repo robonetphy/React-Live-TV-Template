@@ -40,52 +40,53 @@ class PasswordChangeForm extends Component {
     const isInvalid = passwordOne !== passwordTwo || passwordOne === "";
 
     return (
-      <div className="App FullHeightPasswordForget">
-        <div className="App__Aside">
-          <div className="App_Aside_Content">
-            <div>Hi,</div>
-            {this.props.UserEmail}
-          </div>
+      <div className="container mt-lg-5">
+        <div className="container mb-lg-3">
+          <div>Hi,</div>
+          {this.props.UserEmail}
         </div>
-        <div className="App__Form">
-          <div className="FormTitle FormTitle__Link--Active FormTitle__Link">
-            Password Forget
+        <div className="FormTitle FormTitle__Link--Active FormTitle__Link mb-lg-3">
+          Password Forget
+        </div>
+        <form onSubmit={this.onSubmit}>
+          <div class="form-group">
+            <label for="SignupEmail">New Password</label>
+            <input
+              type="password"
+              class="form-control mb-lg-2"
+              id="SinupEmail"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              autoComplete="off"
+              name="passwordOne"
+              value={passwordOne}
+              onChange={this.onChange}
+            />
+            <small id="emailHelp" class="form-text text-muted">
+              We'll never share your password with anyone else.
+            </small>
           </div>
-          <div className="FormCenter psForm">
-            <form onSubmit={this.onSubmit} className="FormFields">
-              <div className="FormField">
-                <label className="FormField__Label">New Password</label>
-                <input
-                  name="passwordOne"
-                  value={passwordOne}
-                  onChange={this.onChange}
-                  type="password"
-                  className="FormField__Input"
-                  placeholder="New Password"
-                />
+          <div class="form-group">
+            <label for="SignupEmail">Confirm New Password</label>
+            <input
+              type="password"
+              class="form-control mb-lg-2"
+              id="SinupEmail"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              autoComplete="off"
+              name="passwordTwo"
+              value={passwordTwo}
+              onChange={this.onChange}
+            />
+          </div>
 
-                <label className="FormField__Label">Confirm New Password</label>
-                <input
-                  type="password"
-                  className="FormField__Input"
-                  placeholder="Confirm New Password"
-                  name="passwordTwo"
-                  value={passwordTwo}
-                  onChange={this.onChange}
-                />
-              </div>
-              <div className="FormField">
-                <button
-                  className="FormField__Button mr-20"
-                  disabled={isInvalid}
-                  type="submit"
-                >
-                  Reset My Password
-                </button>
-              </div>
-              {error && <p>{error.message}</p>}
-            </form>
-          </div>
+          <button type="submit" class="btn btn-primary" disabled={isInvalid}>
+            Reset My Password
+          </button>
+        </form>
+        <div className="container mt-lg-2">
+          {error && <p>{error.message}</p>}
         </div>
       </div>
     );

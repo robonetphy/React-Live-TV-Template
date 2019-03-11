@@ -2,9 +2,15 @@
   "name": "live-tv",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://robonetphy.github.io/React-Live-TV-Template/",
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "firebase": "^5.8.4",
+    "gh-pages": "^2.0.1",
     "hls.js": "^0.8.8",
+    "jquery": "^3.3.1",
+    "mdbootstrap": "^4.7.4",
+    "popper.js": "^1.14.7",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-router-dom": "^4.3.1",
@@ -16,6 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

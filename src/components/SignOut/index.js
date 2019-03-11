@@ -6,18 +6,19 @@ const Styledbutton = styled.button`
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 16px;
   border: none;
   font-size: 0.9em;
-  background-color: #2e4158;
   text-decoration: none;
+  opacity: 0.5;
   &:hover {
     text-decoration: none;
-    opacity: 0.5;
+    background-color: #343a40;
+    opacity: 1;
   }
 `;
 const SignOutButton = ({ firebase }) => (
-  <Styledbutton type="button" onClick={firebase.doSignOut}>
+  <Styledbutton type="button" onClick={firebase.doSignOut} className="bg-dark">
     Sign Out
   </Styledbutton>
 );
