@@ -2,7 +2,7 @@
   "name": "live-tv",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://robonetphy.github.io/React-Live-TV-Template/",
+  "homepage": "http://robonetphy.github.io/Live-TV/",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "firebase": "^5.8.4",
