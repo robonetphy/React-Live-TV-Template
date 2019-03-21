@@ -1,16 +1,17 @@
 {
-  "main.css": "/React-Live-TV-Template/static/css/main.45037231.chunk.css",
-  "main.js": "/React-Live-TV-Template/static/js/main.0169ba47.chunk.js",
-  "main.js.map": "/React-Live-TV-Template/static/js/main.0169ba47.chunk.js.map",
+  "main.css": "/React-Live-TV-Template/static/css/main.e256ea34.chunk.css",
+  "main.js": "/React-Live-TV-Template/static/js/main.81a6d97a.chunk.js",
+  "main.js.map": "/React-Live-TV-Template/static/js/main.81a6d97a.chunk.js.map",
   "runtime~main.js": "/React-Live-TV-Template/static/js/runtime~main.363d9f54.js",
   "runtime~main.js.map": "/React-Live-TV-Template/static/js/runtime~main.363d9f54.js.map",
   "static/css/2.de2933cb.chunk.css": "/React-Live-TV-Template/static/css/2.de2933cb.chunk.css",
-  "static/js/2.dbc95b3a.chunk.js": "/React-Live-TV-Template/static/js/2.dbc95b3a.chunk.js",
-  "static/js/2.dbc95b3a.chunk.js.map": "/React-Live-TV-Template/static/js/2.dbc95b3a.chunk.js.map",
+  "static/js/2.bb5f0cfb.chunk.js": "/React-Live-TV-Template/static/js/2.bb5f0cfb.chunk.js",
+  "static/js/2.bb5f0cfb.chunk.js.map": "/React-Live-TV-Template/static/js/2.bb5f0cfb.chunk.js.map",
   "index.html": "/React-Live-TV-Template/index.html",
-  "precache-manifest.a57c21c95083e5dbec9d75c2a6437d3a.js": "/React-Live-TV-Template/precache-manifest.a57c21c95083e5dbec9d75c2a6437d3a.js",
+  "precache-manifest.c2ce8e7c13577e9a4cafd0fb58ac48e9.js": "/React-Live-TV-Template/precache-manifest.c2ce8e7c13577e9a4cafd0fb58ac48e9.js",
   "service-worker.js": "/React-Live-TV-Template/service-worker.js",
   "static/css/2.de2933cb.chunk.css.map": "/React-Live-TV-Template/static/css/2.de2933cb.chunk.css.map",
-  "static/css/main.45037231.chunk.css.map": "/React-Live-TV-Template/static/css/main.45037231.chunk.css.map",
-  "static/media/Landing.css": "/React-Live-TV-Template/static/media/background.9a34e650.jpg"
+  "static/css/main.e256ea34.chunk.css.map": "/React-Live-TV-Template/static/css/main.e256ea34.chunk.css.map",
+  "static/media/avatar.png": "/React-Live-TV-Template/static/media/avatar.f867fb0d.png",
+  "static/media/Landing.css": "/React-Live-TV-Template/static/media/loader.af74f0e2.gif"
 }
