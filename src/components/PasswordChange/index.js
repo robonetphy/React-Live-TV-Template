@@ -45,9 +45,6 @@ class PasswordChangeForm extends Component {
           <div>Hi,</div>
           {this.props.UserEmail}
         </div>
-        <div className="FormTitle FormTitle__Link--Active FormTitle__Link mb-lg-3">
-          Password Forget
-        </div>
         <form onSubmit={this.onSubmit}>
           <div class="form-group">
             <label for="SignupEmail">New Password</label>

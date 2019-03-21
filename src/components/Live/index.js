@@ -1,219 +1,75 @@
-import React from "react";
+import React, { Component } from "react";
 
-import * as IMAGE from "../../constants/image";
-import * as NAME from "../../constants/name";
-import * as DESCRIPT from "../../constants/descript";
-
-import * as ROUTES from "../../constants/routes";
-
+import { withFirebase } from "../Firebase";
 import { Link } from "react-router-dom";
-const LivePage = () => (
-  <div>
-    <Channels />
-  </div>
-);
+class LivePage extends Component {
+  constructor(props) {
+    super(props);
 
-class Channels extends React.Component {
+    this.state = {
+      channels: {}
+    };
+  }
+
+  componentDidMount() {
+    this.props.firebase.Channels().on("value", snapshot => {
+      this.setState({
+        channels: snapshot.val()
+      });
+    });
+  }
+  componentWillUnmount() {
+    this.props.firebase.Channels().off();
+  }
   render() {
+    const { channels } = this.state;
+    const DynamicCard = [];
+    let Cards = [];
+    let size = 1;
+    let imageurl;
+    for (const key in channels) {
+      if (!channels.hasOwnProperty(key)) continue;
+      const obj = channels[key];
+      imageurl = "http://placehold.it/250x250";
+      if (obj.ImageURL !== "Null") {
+        console.log(obj.ImageURL);
+        imageurl = obj.ImageURL;
+      }
+      Cards.push(
+        <div>
+          <Link to={obj.Path}>
+            <div className="card mr-lg-3" style={{ width: "14rem" }}>
+              <img className="card-img-top" src={imageurl} alt="Card" />
+              <div className="card-body">
+                <div className="overlay">
+                  <div className="text">
+                    <p className="card-text MyFontSize">
+                      {obj.ShortDescription}
+                    </p>
+                  </div>
+                </div>
+                <h5 className="card-title">{obj.Name}</h5>
+              </div>
+            </div>
+          </Link>
+        </div>
+      );
+      if (size % 6 === 0) {
+        DynamicCard.push(<div className="row ml-xl-4 mt-xl-5">{Cards}</div>);
+        Cards = [];
+      }
+      size++;
+    }
+    if (size % 6 !== 0) {
+      DynamicCard.push(<div className="row ml-xl-4 mt-xl-5">{Cards}</div>);
+    }
     return (
       <div className="mt-lg-5  ">
         <h4 className="ml-lg-4"> All Channels</h4>
-        <div className="row ml-xl-4 mt-xl-5">
-          <div>
-            <Link to={ROUTES.GARVPUNJAB}>
-              <div className="card mr-lg-3" style={{ width: "14rem" }}>
-                <img
-                  className="card-img-top"
-                  src={IMAGE.GARVPUNJAB}
-                  alt="Card"
-                />
-                <div className="card-body">
-                  <div className="overlay">
-                    <div className="text">
-                      <p className="card-text">{DESCRIPT.GARVPUNJAB}</p>
-                    </div>
-                  </div>
-                  <h5 className="card-title">{NAME.GARVPUNJAB}</h5>
-                </div>
-              </div>
-            </Link>
-          </div>
-          <div>
-            <div className="card mr-lg-3" style={{ width: "14rem" }}>
-              <Link to={ROUTES.PUNJABI720}>
-                <img
-                  className="card-img-top"
-                  src="https://picsum.photos/1280/720"
-                  alt="Card"
-                />
-                <div className="card-body">
-                  <div className="overlay">
-                    <div className="text">
-                      <p className="card-text">{DESCRIPT.PUNJABI720}</p>
-                    </div>
-                  </div>
-                  <h5 className="card-title">{NAME.PUNJABI720}</h5>
-                </div>
-              </Link>
-            </div>
-          </div>
-
-          <div>
-            <div className="card mr-lg-3" style={{ width: "14rem" }}>
-              <Link to={ROUTES.LIVESTREAM}>
-                <img
-                  className="card-img-top"
-                  src={IMAGE.LIVESTREAM}
-                  alt="Card"
-                />
-                <div className="card-body">
-                  <div className="overlay">
-                    <div className="text">
-                      <p className="card-text">{DESCRIPT.LIVESTREAM}</p>
-                    </div>
-                  </div>
-                  <h5 className="card-title">{NAME.LIVESTREAM}</h5>
-                </div>
-              </Link>
-            </div>
-          </div>
-          <div>
-            <div className="card mr-lg-3" style={{ width: "14rem" }}>
-              <Link to={ROUTES.PHANTAM}>
-                <img className="card-img-top" src={IMAGE.PHANTAM} alt="Card" />
-                <div className="card-body">
-                  <div className="overlay">
-                    <div className="text">
-                      <p className="card-text">{DESCRIPT.PHANTAM}</p>
-                    </div>
-                  </div>
-                  <h5 className="card-title">{NAME.PHANTAM}</h5>
-                </div>
-              </Link>
-            </div>
-          </div>
-          <div>
-            <div className="card mr-lg-3" style={{ width: "14rem" }}>
-              <img className="card-img-top" src={IMAGE.LIVESTREAM} alt="Card" />
-              <div className="card-body">
-                <div className="overlay">
-                  <div className="text">
-                    <p className="card-text">{DESCRIPT.LIVESTREAM}</p>
-                  </div>
-                </div>
-                <h5 className="card-title">{NAME.GARVPUNJAB}</h5>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="card mr-lg-3" style={{ width: "14rem" }}>
-              <img
-                className="card-img-top"
-                src="https://picsum.photos/1280/720"
-                alt="Card"
-              />
-              <div className="card-body">
-                <div className="overlay">
-                  <div className="text">
-                    <p className="card-text">{DESCRIPT.PUNJABI720}</p>
-                  </div>
-                </div>
-                <h5 className="card-title">{NAME.PUNJABI720}</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row ml-xl-4 mt-xl-5">
-          <div>
-            <div className="card mr-lg-3" style={{ width: "14rem" }}>
-              <img className="card-img-top" src={IMAGE.GARVPUNJAB} alt="Card" />
-              <div className="card-body">
-                <div className="overlay">
-                  <div className="text">
-                    <p className="card-text">{DESCRIPT.GARVPUNJAB}</p>
-                  </div>
-                </div>
-                <h5 className="card-title">{NAME.GARVPUNJAB}</h5>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="card mr-lg-3" style={{ width: "14rem" }}>
-              <img
-                className="card-img-top"
-                src="https://picsum.photos/1280/720"
-                alt="Card"
-              />
-              <div className="card-body">
-                <div className="overlay">
-                  <div className="text">
-                    <p className="card-text">{DESCRIPT.PUNJABI720}</p>
-                  </div>
-                </div>
-                <h5 className="card-title">{NAME.PUNJABI720}</h5>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div className="card mr-lg-3" style={{ width: "14rem" }}>
-              <img className="card-img-top" src={IMAGE.LIVESTREAM} alt="Card" />
-              <div className="card-body">
-                <div className="overlay">
-                  <div className="text">
-                    <p className="card-text">{DESCRIPT.LIVESTREAM}</p>
-                  </div>
-                </div>
-                <h5 className="card-title">{NAME.LIVESTREAM}</h5>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="card mr-lg-3" style={{ width: "14rem" }}>
-              <img className="card-img-top" src={IMAGE.PHANTAM} alt="Card" />
-              <div className="card-body">
-                <div className="overlay">
-                  <div className="text">
-                    <p className="card-text">{DESCRIPT.PHANTAM}</p>
-                  </div>
-                </div>
-                <h5 className="card-title">{NAME.PHANTAM}</h5>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="card mr-lg-3" style={{ width: "14rem" }}>
-              <img className="card-img-top" src={IMAGE.LIVESTREAM} alt="Card" />
-              <div className="card-body">
-                <div className="overlay">
-                  <div className="text">
-                    <p className="card-text">{DESCRIPT.LIVESTREAM}</p>
-                  </div>
-                </div>
-                <h5 className="card-title">{NAME.GARVPUNJAB}</h5>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="card mr-lg-3" style={{ width: "14rem" }}>
-              <img
-                className="card-img-top"
-                src="https://picsum.photos/1280/720"
-                alt="Card"
-              />
-              <div className="card-body">
-                <div className="overlay">
-                  <div className="text">
-                    <p className="card-text">{DESCRIPT.PUNJABI720}</p>
-                  </div>
-                </div>
-                <h5 className="card-title">{NAME.PUNJABI720}</h5>
-              </div>
-            </div>
-          </div>
-        </div>
+        {DynamicCard}
       </div>
     );
   }
 }
-export default LivePage;
+
+export default withFirebase(LivePage);

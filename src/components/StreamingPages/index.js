@@ -8,6 +8,9 @@ import * as DESCRIPT from "../../constants/descript";
 
 import * as IMAGE from "../../constants/image";
 class StreamPage extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div className="container">

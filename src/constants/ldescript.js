@@ -1,8 +1,8 @@
 export const GARVPUNJAB =
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam assumenda adipisci commodi cum nobis, architecto amet nostrum obcaecati eius! Iste ea dolore tempora illum voluptatum dolor deleniti, consequuntur itaque veniam.";
+  "First 24X7 Punjabi TV Channel World Wide. Exploring Culture and Community.";
 export const LIVESTREAM =
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam assumenda adipisci commodi cum nobis, architecto amet nostrum obcaecati eius! Iste ea dolore tempora illum voluptatum dolor deleniti, consequuntur itaque veniam.";
+  "First 24X7 Punjabi TV Channel World Wide. Exploring Culture and Community..";
 export const PHANTAM =
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam assumenda adipisci commodi cum nobis, architecto amet nostrum obcaecati eius! Iste ea dolore tempora illum voluptatum dolor deleniti, consequuntur itaque veniam.";
+  "First 24X7 Punjabi TV Channel World Wide. Exploring Culture and Community..";
 export const PUNJABI720 =
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam assumenda adipisci commodi cum nobis, architecto amet nostrum obcaecati eius! Iste ea dolore tempora illum voluptatum dolor deleniti, consequuntur itaque veniam.";
+  "First 24X7 Punjabi TV Channel World Wide. Exploring Culture and Community..";

@@ -53,12 +53,12 @@ export default class Player extends Component {
   render() {
     const style = {
       width: 1000,
-      height: 500,
+      height: "40hv",
       background: "#000"
     };
 
     return (
-      <div className="mt-lg-5">
+      <div className="MyMarginTop">
         <div className="embed-responsive embed-responsive-21by9">
           <video
             className="embed-responsive-item"
@@ -69,11 +69,11 @@ export default class Player extends Component {
             autoPlay={true}
           />
         </div>
-        <div className="container mt-lg-5">
+        <div className="container MyMarginTop">
           <VideoTitle>
             <VideoLiveButtonTitle>Live</VideoLiveButtonTitle>
             {this.props.Name}
-            <VideoDescription className="mt-lg-2">
+            <VideoDescription className="MyMarginTop MyFontSize">
               {this.props.Description}
             </VideoDescription>
           </VideoTitle>
